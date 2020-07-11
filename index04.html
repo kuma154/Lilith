@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .wrap{
+        position: relative;
+        width: 100%;
+        height: 433px;
+        margin-top: 100px;
+      }
+
+      .list{
+    width: 100%;
+    height: 433px;
+    list-style: none;
+    position: relative;
+}
+.item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+.item:nth-child(1){
+    background: url('https://public-cdn.mokahr.com/d065110f-30a4-483f-808f-4bcdb03a9bdd.jpg') no-repeat center center/cover;
+}
+.item:nth-child(2){
+    background: url('https://public-cdn.mokahr.com/16fe4061-e416-4437-9c9e-69173dfb1731.png') no-repeat center center/cover;
+}
+.item:nth-child(3){
+    background: url('https://public-cdn.mokahr.com/2a9ea4de-2094-48a1-8b6c-b4a4df0e81b6.jpg') no-repeat center center/cover;
+}
+
+.item.active{
+    opacity: 1;
+    z-index: 40;
+}
+.btn{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    border: none;
+    z-index: 50;
+}
+.btn:hover{
+    background-color: rgba(0,0,0,0.85);
+    
+}
+#left{
+    left: 100px;
+    top: 150px;
+}
+#right{
+    right: 100px;
+    top: 150px;
+}
+.icons{
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0,0,0,0.0);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+.icons ul{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-top: 100px;
+}
+.icons ul li.icon{
+    width: 160px;
+    height: 8px;
+    background: rgba(0,0,0,0.0);
+
+   
+   
+}
+.icons ul .icon .btnn{
+    width: 160px;
+    height: 8px;
+
+    border: 0;
+    outline: none;
+    background-color: salmon;
+}
+
+
+.black{
+    width: 160px;
+    height: 8px;
+  
+    opacity: 1;
+    transition: all 0.8s ease;
+}
+.icons ul .icon .btnn:hover .black{
+    opacity: 0;
+}
+.zp-header{
+    background-color: #fff;
+    margin-top: -100px;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    overflow: hidden;
+}
+.zp-logo{
+    width: 200px;
+    margin-top: 40px;
+    height: 48px;
+    background: url("https://public-cdn.mokahr.com/f5822bec-0830-4d48-abbb-a13a3eac85f0.png?x-oss-process=image/resize,m_lfit,w_200,h_48") no-repeat center center/cover;
+    float: left;
+}
+.zp-bar{
+    margin-left: 300px;
+    width: 800px;
+    height: 60px;
+    margin-top: 40px;
+   line-height: 60px;
+}
+.zp-bar li{
+    float: left;
+    margin: 0 15px;
+}
+.zp-bar li a{
+    color: rgba(0,0,0,0.6);
+}
+.sh{
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.05);
+}
+.shbox{
+    padding: 60px 0 80px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shbox h2{
+    color: rgba(0,0,0,0.8);
+    font-weight: 100;
+    font-size: 32px;
+}
+.sh-active{
+    color: rgba(0,0,0,0.8);
+    font-weight: 100;
+    font-size: 32px;
+}
+ .sh-bottom{
+    margin: 30px 0;
+    width: 80px;
+    height: 2px;
+    background-color: rgba(0,0,0,0.15);
+}
+.sh-list{
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+.sh-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    background-color: #fff;
+}
+.sh-item h2{
+    font-weight: 50;
+    font-size: 20px;
+    margin: 30px 0;
+}
+.sh-item a{
+    background-color: #d32f2f;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 17px;
+}
+.about-lilith{
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+.about-lilith-box{
+    padding: 60px 0 80px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lilith-msg{
+    width: 396px;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+   
+}
+.lilith-msg p{
+    padding: 14px 0;
+}
+.lilith-msg .lilith-msg-wrap{
+    height: 130px;
+}
+.sh-games{
+    width: 100%;
+    overflow: hidden;
+}
+.sh-games-wrap{
+    padding: 60px 0 80px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sh-games-box{
+    width: 100%;
+    display: grid;
+    height: 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0;
+}
+.sh-games-item{
+    width: 200px;
+    height: 200px;
+}
+.sh-games-item:nth-child(1){
+    background: url('https://www.lilithgames.com/cn/images/games_img/games_img_10.jpg') no-repeat center center/cover;
+}
+.sh-games-item:nth-child(2){
+    background: url('https://www.lilithgames.com/cn/images/games_img/games_img_2.jpg') no-repeat center center/cover;
+}
+.sh-games-item:nth-child(3){
+    background: url('https://www.lilithgames.com/cn/images/games_img/games_img_3.jpg') no-repeat center center/cover;
+}
+.sh-games-item:nth-child(4){
+    background: url('https://www.lilithgames.com/cn/images/games_img/games_img_8.jpg') no-repeat center center/cover;
+}
+.sh-games-item:nth-child(5){
+    background: url('https://www.lilithgames.com/cn/images/games_img/games_img_9.jpg') no-repeat center center/cover;
+}
+.sh-games-item:nth-child(6){
+    background: url('https://www.lilithgames.com/cn/images/sss.jpg') no-repeat center center/cover;
+}
+.sh-games-item .sh-black{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.35);
+    opacity: 0;
+    transition: 0.5s all ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.sh-games-item .sh-black h2{
+    font-size: 20px;
+    padding-top: 20px;
+}
+.sh-games-item .sh-black a{
+    font-size: 14px;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-top: 40px;
+    padding: 5px 10px;
+}
+.sh-games-item .sh-black a:hover{
+    color: peru;
+    border-color: peru;
+}
+.sh-games-item .sh-black:hover{
+    opacity: 1;
+}
+.make-games{
+    width: 100%;
+    overflow: hidden;
+}
+.make-games-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 60px 0 80px;
+
+}
+.game-video{
+    width: 100%;
+    height: 460px;
+}
+.game-video img{
+    width: 100%;
+    height: 100%;
+    background: no-repeat center center/cover;
+}
+.sh-about-us{
+
+    width: 100%;
+    height: 533px;
+    background: url("https://public-cdn.mokahr.com/0f3c6469-94fe-45d0-9035-a6eaa91e9007.jpg") no-repeat center center/cover;
+}
+.contact{
+    width: 100%;
+    overflow: hidden;
+}
+.contact-wrap{
+    width: 100%;
+    padding: 60px 0 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+.wx-pic{
+    padding: 30px 0;
+}
+.wx-pic img{
+    width: 227px;
+    height: 227px;
+    background: no-repeat center center/cover;
+}
+.contact-wrap p{
+    font-size: 14px;
+    color: rgba(0,0,0,0.6);
+}
+    </style>
+</head>
+<body>
+    <header class="zp-header">
+        <div class="container">
+            <div class="zp-logo"></div>
+            <div class="zp-bar">
+                <ul>
+                    <li><a href="#">Who is Lilith</a></li>
+                    <li><a href="#">社会招聘</a></li>
+                    <li><a href="#">校园招聘</a></li>
+                    <li><a href="https://kuma154.github.io/Lilith">返回官网</a></li>
+                    <li><a href="#">达芬奇报名通道</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="wrap">
+        <ul class="list">
+            <li class="item active">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+            
+        </ul>
+        <button class="btn" id="left">
+            <</button> <button class="btn" id="right">>
+        </button>
+        <div class="icons">
+            <ul>
+                <li class="icon"><button
+                        style="background: #c4c4c4"
+                        class="btnn" data-index="0">
+                        <div class="black"></div>
+                    </button></li>
+                <li class="icon"><button
+                    style="background: #c4c4c4"
+                        class="btnn" data-index="1">
+                        <div class="black"></div>
+                    </button></li>
+                <li class="icon"><button
+                    style="background: #c4c4c4"
+                        class="btnn" data-index="2">
+                        <div class="black"></div>
+                    </button></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="sh">
+        <div class="container">
+            <div class="shbox">
+                <h2 class="sh-active">社会招聘</h2>
+                <div class="sh-bottom"></div>
+                <div class="sh-list">
+                    <div class="sh-item">
+                        <h2>美术</h2>
+                        <a href="#">共41个职位</a>
+                    </div>
+                    <div class="sh-item">
+                        <h2>技术</h2>
+                        <a href="#">共30个职位</a>
+                    </div>
+                    <div class="sh-item">
+                        <h2>产品</h2>
+                        <a href="#">共23个职位</a>
+                    </div>
+                    <div class="sh-item">
+                        <h2>发行</h2>
+                        <a href="#">共20个职位</a>
+                    </div>
+                    <div class="sh-item">
+                        <h2>综合</h2>
+                        <a href="#">共9个职位</a>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+    <div class="about-lilith">
+        <div class="container">
+            <div class="about-lilith-box">
+                <h2 class="sh-active">Who is Lilith?</h2>
+                <div class="sh-bottom"></div>
+                <div class="lilith-msg">
+                    <p>Who is 莉莉丝游戏</p>
+                    <p>莉莉丝是中国全球收入名列前茅的游戏开发与发行商</p>
+                    <p>2014年推出首款游戏《小冰冰传奇》即成为国民级卡牌手游标杆</p>
+                    <p>旗下《Abi》被苹果评为 2017 年最佳独立游戏</p>
+                    <p>《剑与家园》《万国觉醒》《剑与远征》全球市场月均流水过亿</p>
+                    <p>2019年作为唯一上榜游戏公司入选领英顶尖创业公司排行榜</p>
+                    <p>2020年《剑与远征》国服上线即获得好成绩</p>
+                    <div class="lilith-msg-wrap"></div>
+                    <p>我们成立于2013年5月  总部坐标上海</p>
+                    <p>在全球拥有超过700位员工</p>
+                    <p>简单、真诚，是莉莉丝的文化</p>
+                    <p>我们为员工提供最好的工作与交流环境</p>
+                    <p>致力为全球玩家创造好玩的游戏</p>
+                    <p>更多的不可能，等你一起创造</p>
+                    <p>未来可期，加入我们，创造Li史</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sh-games">
+        <div class="container">
+            <div class="sh-games-wrap">
+                 <h2>Our Games</h2>
+            <div class="sh-bottom"></div>
+            <div class="sh-games-box">
+                <div class="sh-games-item"><div class="sh-black"><h2>万国觉醒</h2><a href="#">点击查看</a></div></div>
+                <div class="sh-games-item"><div class="sh-black"><h2>Avi</h2><a href="#">点击查看</a></div></div>
+                <div class="sh-games-item"><div class="sh-black"><h2>小冰冰传奇</h2><a href="#">点击查看</a></div></div>
+                <div class="sh-games-item"><div class="sh-black"><h2>Soul Hunters</h2><a href="#">点击查看</a></div></div>
+                <div class="sh-games-item"><div class="sh-black"><h2>英雄战境</h2><a href="#">点击查看</a></div></div>
+                <div class="sh-games-item"><div class="sh-black"><h2>剑与家园</h2><a href="#">点击查看</a></div></div>
+            
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="make-games">
+        <div class="container">
+            <div class="make-games-wrap">
+                <h2 class="sh-active">做好玩的游戏</h2>
+                <div class="sh-bottom"></div>
+                <div class="game-video"><img src="https://public-cdn.mokahr.com/0dd1fee4-955a-48c6-9a26-3c543706f5f0.png?x-oss-process=image/resize,m_lfit,h_0,w_1200"></img></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sh-about-us">
+        
+    </div>
+
+    <div class="contact">
+        <div class="container">
+            <div class="contact-wrap">
+                <h2 class="sh-active">Contact Us</h2>
+                <div class="sh-bottom"></div>
+                <div class="wx-pic">
+                    <img src="https://public-cdn.mokahr.com/3348e0d0-b58d-4f1c-b487-9a21a5d81414.png?x-oss-process=image/resize,m_lfit,h_0,w_1200" alt="">
+                </div>
+                <p>关注莉莉丝游戏微信公众号，获得最新招聘动态。</p>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+
+
+
+    
+    <script>
+        var items=document.getElementsByClassName('item');
+        var left=document.getElementById('left');
+        var right=document.getElementById('right');
+        var icon=document.getElementsByClassName('btnn');
+        var black=document.getElementsByClassName('black');
+
+        var index=0;
+        var clear=function(){
+            for(var i=0;i<items.length;i++){
+                items[i].className='item'
+            }
+        }
+        var goindex=function(){
+            clear();
+            items[index].className='item active'
+        }
+        var next=function(){
+            if(index<2){
+                index++;
+            }else{
+                index=0
+            }
+            goindex();
+        }
+        var pre=function(){
+            if(index>0){
+                index--;
+            }else{
+                index=2;
+            }
+            goindex();
+        }
+        left.addEventListener('click',()=>{
+            pre();
+           
+            console.log(index);
+        })
+        right.addEventListener('click',()=>{
+            next();
+            
+            console.log(index);
+        })
+
+        for(var i=0;i<icon.length;i++){
+            icon[i].addEventListener('mouseover',function(){
+               var dateIndex=this.getAttribute('data-index');
+              
+               index=dateIndex;
+               goindex();
+            })
+        }
+
+        var start=function(){
+            setInterval(function(){
+            
+           next();
+         
+        }, 3500);
+        }
+       
+    </script>
+
+</body>
+</html>
